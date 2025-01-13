@@ -62,11 +62,12 @@ public class Main {
      */
     public static int somma(int a,int b) {
         int risposta=0;
-        // TODO: SCRIVI QUI IL CODICE
+        risposta = a+b;
         return risposta;
     }
 
     /**
+}
      * Esercizio 2
      * scrivere il codice che restituisca la stringa "maggiorenne" se il parametro età (age) indica che la persona ha compiuto i 18 anni,
      * altrimenti restituisca la stringa "minorenne"
@@ -75,7 +76,11 @@ public class Main {
      */
     public static String isMaggiorenne(int age) {
         String risposta="maggiorenne,minorenne";
-        // TODO: SCRIVI QUI IL CODICE
+        if (age >= 18) {
+            risposta = "maggiorenne";
+        } else {
+            risposta = "minorenne";
+        }
         return risposta;
     }
 
@@ -87,7 +92,11 @@ public class Main {
      */
     public static boolean isVocale(char carattere) {
         boolean risposta=false;
-        // TODO: SCRIVI QUI IL CODICE
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            risposta= "true"; // È una vocale
+        } else {
+            risposta="false"; // Non è una vocale
+        }
         return risposta;
     }
 
@@ -101,7 +110,21 @@ public class Main {
      */
     public static String tipoTriangolo(float lato1, float lato2, float lato3) {
         String risposta="equilatero,isoscele,scaleno";
-        // TODO: SCRIVI QUI IL CODICE
+        if (lato1 <= 0 || lato2 <= 0 || lato3 <= 0 || 
+        (lato1 + lato2 <= lato3) || 
+        (lato1 + lato3 <= lato2) || 
+        (lato2 + lato3 <= lato1)) {
+        return "triangolo non valido"; // I lati non formano un triangolo
+    }
+
+    // Determinazione del tipo di triangolo
+    if (lato1 == lato2 && lato2 == lato3) {
+        risposta= "equilatero"; // Tutti i lati sono uguali
+    } else if (lato1 == lato2 || lato1 == lato3 || lato2 == lato3) {
+        risposta= "isoscele"; // Due lati sono uguali
+    } else {
+        risposta= "scaleno"; // Tutti i lati sono diversi
+    }
         return risposta;
     }
 
@@ -129,7 +152,11 @@ public class Main {
      */
     public static String ordineDecrescente(int fine, int inizio) {
         String risposta="100,99,98";
-        // TODO: SCRIVI QUI IL CODICE
+       risposta="";
+       for(int i= inizio; i<=fine;i++){
+        risposta+= integer.tostring(i);
+        risposta +=",";
+       }
         return risposta;
     }
 
